@@ -15,4 +15,14 @@ Spesifikasi:
 - [ ] e. Aplikasi bisa menampilkan daftar peserta terurut berdasarkan skor yang diperoleh.
 	
 - [ ] f. Admin bisa melihat 5 daftar soal yang paling banyak benar atau salah dijawab oleh peserta.
+
+
+Fungsi yang dibutuhkan
+
+- [ ] Menyimpan,mengubah, dan menghapus data soal beserta solusi
+- [ ] Data untuk menyimpan calon peserta
+- [ ] Fungsi untuk menjawab soal acak sebanyak N( N merupakan pilihan user) dan mengeluarkan solusi soal tersebut serta menampilkan soal akhir.
+- [ ] Membuat aplikasi berjalan berulang-kali
+- [ ] Membuat fungsi menampilkan daftar peserta terurut berdasarkan skor
+- [ ] Menghitung total salah/benar tiap soal dan menampilkan top 5 benar/salah
 	
