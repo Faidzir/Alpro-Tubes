@@ -26,7 +26,9 @@ func loginAdmin(bS *bankSoal, n *int) {
 	fmt.Println("--Selamat Datang--")
 	fmt.Println()
 	for lanjut {
-		fmt.Println("====MENU ADMIN====")
+		fmt.Println("==================")
+		fmt.Println("    MENU ADMIN    ")
+		fmt.Println("==================")
 		fmt.Println("Sebagai Admin anda dapat:")
 		fmt.Println("1. Menambahkan Soal \n2. Menghapus Soal \n3. Mengedit Soal\n4. Menampilkan Soal\n5. Keluar")
 		fmt.Print("Silahkan pilih: ")
@@ -70,7 +72,7 @@ func scanString(s *string) {
 
 func addSoal(bS *bankSoal, n *int) {
 	var lanjut = "Y"
-	fmt.Println("===TAMBAH SOAL===")
+	fmt.Println("===  TAMBAH SOAL  ===")
 	for lanjut == "Y" {
 		fmt.Println("Jumlah soal pada bank soal saat ini adalah:", *n)
 		fmt.Print("Silahkan masukan soal\n")
@@ -93,7 +95,7 @@ func addSoal(bS *bankSoal, n *int) {
 		fmt.Print("D. ")
 		scanString(&bS[*n].j4)
 
-		fmt.Println("Silahkan masukan jawaban soal tersebut")
+		fmt.Println("Silahkan masukan opsi jawaban soal tersebut (A/B/C/D)")
 		scanString(&bS[*n].ans)
 
 		fmt.Println("Silahkan masukan solusi/penjelasan soal tersebut")
@@ -118,7 +120,7 @@ func addSoal(bS *bankSoal, n *int) {
 func deleteSoal(bS *bankSoal, n *int) {
 	var choice int
 	var lanjut = "Y"
-	fmt.Println("===HAPUS SOAL===")
+	fmt.Println("===  HAPUS SOAL  ===")
 	for lanjut == "Y" {
 		if *n == 0 {
 			fmt.Println("Saat ini tidak terdapat soal dalam bank Soal. Silahkan masukan soal terlebih dahulu")
@@ -163,7 +165,7 @@ func deleteSoal(bS *bankSoal, n *int) {
 func editSoal(bS *bankSoal, n *int) {
 	var choice int
 	for choice != 3 {
-		fmt.Println("====EDIT SOAL====")
+		fmt.Println("====  EDIT SOAL  ====")
 		fmt.Println("Silahkan pilih opsi berikut ini")
 		fmt.Println("1. Mengedit Soal")
 		fmt.Println("2. Mengedit Kunci Jawaban Soal")
@@ -325,7 +327,7 @@ func loginPlayer(pemain *player, bS *bankSoal, nSoal int, nPlayer *int) {
 	var nama string
 	var idx int
 	var choice int
-	fmt.Println("===SELAMAT DATANG====")
+	fmt.Println("===  SELAMAT DATANG  ====")
 
 	fmt.Println("Silahkan masukan nama anda")
 	fmt.Scan(&nama)
@@ -333,17 +335,22 @@ func loginPlayer(pemain *player, bS *bankSoal, nSoal int, nPlayer *int) {
 	idx = found(*pemain, nama, *nPlayer)
 
 	if idx == -1 {
-		fmt.Println("===SELAMAT DATANG PEMAIN BARU===")
+		fmt.Println("==================================")
+		fmt.Println("    SELAMAT DATANG PEMAIN BARU    ")
+		fmt.Println("==================================")
 		fmt.Println()
 		pemain[*nPlayer].nama = nama
 		*nPlayer++
 	} else {
-		fmt.Println("===SELAMAT DATANG KEMBALI", pemain[idx].nama)
+		fmt.Println("======================")
+		fmt.Println("    SELAMAT DATANG    ")
+		fmt.Println("    ", pemain[idx].nama, "    ")
+		fmt.Println("======================")
 		fmt.Println()
 	}
 	for choice != 3 {
 		//fmt.Println(*nPlayer)
-		fmt.Println("___Silahkan Pilih Menu Berikut___")
+		fmt.Println("**** Silahkan Pilih Menu Berikut ****")
 		fmt.Println("1. Memulai Quiz\n2. Melihat Skor\n3. Kembali ke menu sebelumnya")
 		fmt.Scan(&choice)
 		fmt.Println()
@@ -358,7 +365,7 @@ func loginPlayer(pemain *player, bS *bankSoal, nSoal int, nPlayer *int) {
 		} else if choice == 2 {
 			printSkor(*pemain, *nPlayer)
 		} else if choice == 3 {
-			fmt.Println("====Kembali Ke Menu Sebelumnya====")
+			fmt.Println("====  Kembali Ke Menu Sebelumnya  ====")
 		}
 	}
 }
@@ -391,7 +398,7 @@ func mulaiQuiz(pemain *player, bS *bankSoal, nSoal, nPlayer int) {
 
 		randNum := rand.Perm(jml)
 		fmt.Println()
-		fmt.Println("===MEMULAI PERMAINAN===")
+		fmt.Println("===  MEMULAI PERMAINAN  ===")
 		fmt.Println()
 		for i := 0; i < jml; i++ {
 			var jawaban string
@@ -413,13 +420,13 @@ func mulaiQuiz(pemain *player, bS *bankSoal, nSoal, nPlayer int) {
 			}
 
 			if jawaban == "A" {
-				ans = bS[randNum[i]].j1
+				ans = "A"
 			} else if jawaban == "B" {
-				ans = bS[randNum[i]].j2
+				ans = "B"
 			} else if jawaban == "C" {
-				ans = bS[randNum[i]].j3
+				ans = "C"
 			} else if jawaban == "D" {
-				ans = bS[randNum[i]].j4
+				ans = "D"
 			}
 
 			fmt.Println("Jawaban:", bS[randNum[i]].ans)
@@ -436,7 +443,9 @@ func mulaiQuiz(pemain *player, bS *bankSoal, nSoal, nPlayer int) {
 		}
 
 		fmt.Println()
-		fmt.Println("===PERMAINAN SELESAI===")
+		fmt.Println("=======================")
+		fmt.Println("   PERMAINAN SELESAI   ")
+		fmt.Println("=======================")
 		fmt.Println("Anda telah menyelesaikan permainan.\nSkor akhir anda:", skorPemain, "Skor anda sebelumnya:", pemain[nPlayer].skor)
 
 		if skorPemain > pemain[nPlayer].skor {
@@ -449,7 +458,7 @@ func mulaiQuiz(pemain *player, bS *bankSoal, nSoal, nPlayer int) {
 		fmt.Println()
 		skorPemain = 0
 	}
-	fmt.Println("===Kembali Ke Menu Sebelumnya===")
+	fmt.Println("===   Kembali Ke Menu Sebelumnya   ===")
 	fmt.Println()
 }
 
@@ -466,8 +475,9 @@ func sortSkor(pemain *player, nPlayer int) {
 }
 
 func printSkor(pemain player, nPlayer int) {
-	fmt.Println("====PRINT SKOR====")
-
+	fmt.Println("==================")
+	fmt.Println("    PRINT SKOR    ")
+	fmt.Println("==================")
 	sortSkor(&pemain, nPlayer)
 	for i := 0; i < nPlayer; i++ {
 		fmt.Println(i+1, ".", pemain[i].nama, pemain[i].skor)
@@ -483,6 +493,10 @@ func main() {
 	var choice int
 
 	for choice != 3 {
+		fmt.Println("--------------------------------------")
+		fmt.Println("     WHO WANT TO BE A MILLIONAIRE     ")
+		fmt.Println("--------------------------------------")
+
 		fmt.Println("Pilih Menu Berikut")
 		fmt.Println("1. Login as Admin")
 		fmt.Println("2. Login as Player")
