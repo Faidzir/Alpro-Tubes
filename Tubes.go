@@ -493,9 +493,9 @@ func main() {
 	var choice int
 
 	for choice != 3 {
-		fmt.Println("--------------------------------------")
-		fmt.Println("     WHO WANT TO BE A MILLIONAIRE     ")
-		fmt.Println("--------------------------------------")
+		fmt.Println("-------------------------------------")
+		fmt.Println("     WHO ONE TO BE A MILLIONAIRE     ")
+		fmt.Println("-------------------------------------")
 
 		fmt.Println("Pilih Menu Berikut")
 		fmt.Println("1. Login as Admin")
