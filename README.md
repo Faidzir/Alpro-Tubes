@@ -1,3 +1,7 @@
+Kelompok 3
+1. Nurfaidzi Ramdhani Arifin 1305220075
+2. Steven Immanuel C Girsang 1305220072
+
 Aplikasi Quiz:: Who One to Be a Millionaire
 
 Deskripsi: Aplikasi ini digunakan untuk mengolah data bank soal dan juga pelaksanaan kuis, yang mana peserta yang akan menjawab soal pilihan ganda yang akan dipilih sebanyak N secara acak dari bank soal. Pengguna aplikasi ini adalah admin aplikasi dan peserta kuis.
