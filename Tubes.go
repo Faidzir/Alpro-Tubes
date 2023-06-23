@@ -206,8 +206,12 @@ func editSoal(bS *bankSoal, n *int) {
 				fmt.Print("D. ")
 				scanString(&bS[nomor].j4)
 
-				fmt.Println("Silahkan masukan solusi soal tersebut")
+				fmt.Println("Silahkan masukan opsi jawaban soal tersebut (A/B/C/D)")
 				scanString(&bS[nomor].ans)
+
+				fmt.Println("Silahkan masukan solusi/penjelasan soal tersebut")
+				scanString(&bS[nomor].solution)
+
 			}
 		} else if choice == 3 {
 			fmt.Println("====KEMBALI KE MENU SEBELUMNYA====")
